@@ -12,6 +12,8 @@
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
+
+
 /*** Functions ***/
 
 // Round to the nearest `decimals` number of decimals
@@ -39,4 +41,27 @@ function zeros() {
 function vertex() {
 
 }
+
+
+
+// 1
+function difference(a, b) {
+    let diff = delta(a, b);
+    return diff
+}
+
+// 2
+function slope(x1, y1, x2, y2) {
+    let slp = delta(x1, x2)/delta(y1, y2);
+    document.getElementById("slope_answer").textContent = slp
+}
+
+// 3
+function average(n1, n2) {
+    let avg = (n1+n2)/(document.getElementById("average_between").value);
+    return avg;
+}
+
+// 4
+function
 

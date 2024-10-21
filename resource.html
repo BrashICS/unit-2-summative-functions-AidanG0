@@ -1,0 +1,28 @@
+
+
+<label for="a">a:</label>
+<input id="a" name="a" type="number" value="1" autocomplete="off" class="short_number"> &nbsp;
+<label for="b">b:</label>
+<input id="b" type="number" value="1" autocomplete="off" class="short_number"> &nbsp;
+
+<button id="difference">Find the difference</button>
+
+<div>The difference is: <span id="difference_anser"></span></div>
+
+<br>
+<label for="x1">x1:</label>
+<input id="x1" name="x1" type="number" value="1" autocomplete="off" class="short_number"> &nbsp;
+<label for="y1">y1:</label>
+<input id="y1" type="number" value="1" autocomplete="off" class="short_number"> &nbsp;
+<label for="x2">x2:</label>
+<input id="x" name="x2" type="number" value="1" autocomplete="off" class="short_number"> &nbsp;
+<label for="y2">y2:</label>
+<input id="y2" type="number" value="1" autocomplete="off" class="short_number"> &nbsp;
+
+<button id="slope">Find the slope</button>
+
+<div>The slope is: <span id="slope_answer"></span></div>
+
+
+document.getElementById("difference").addEventListener("click", difference);
+document.getElementById("slope").addEventListener("click", slope);
