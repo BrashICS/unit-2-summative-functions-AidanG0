@@ -42,8 +42,8 @@ function vertex() {
 
 
 // 1
-function find_difference(a, b) {
-    let diff = Math.abs(a - b);
+function find_difference(a1, b) {
+    let diff = Math.abs(a1 - b);
     document.getElementById("difference_answer").textContent = diff
     return diff;
     
