@@ -17,16 +17,12 @@ document.getElementById("vertex").addEventListener("click", vertex);
 /*** Functions ***/
 
 // Round to the nearest `decimals` number of decimals
-function round(value, decimals) {
-    return Math.round(value * 10**decimals) / 10**decimals;
-}
+
 
 // Round to the user's number of decimals
-function round_user(value) {
-    // Get the number of decimals from the "rounding" box
-    let d = Number(document.getElementById("rounding").value)
 
-}
+
+
 
 // Calculate the y-value of a parabola from standand form
 function y_quad(a, b, c, x) {
@@ -59,10 +55,22 @@ function find_slope(x1, y1, x2, y2) {
 // 3
 
 function find_average(n1, n2) {
-    let avg = (n1+n2)/;
+    let avg = (n1 + n2)/2;
     return avg;
+}
 
 
-// 4
+// 4 rounding box in html
+
+function round(value, decimals) {
+    return Math.round(value * 10**decimals) / 10**decimals;
+}
+
+function round_user(value) {
+    let d = Number(document.getElementById("rounding").value)
+}
+
+// 5
+
 
 
