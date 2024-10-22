@@ -9,6 +9,7 @@
 'use strict';
 
 /*** Event Listeners ***/
+document.getElementById("difference").addEventListener("click", find_difference);
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
