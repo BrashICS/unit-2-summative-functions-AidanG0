@@ -72,5 +72,8 @@ function round_user(value) {
 
 // 5
 
-
+function find_length_of_line_segment(x1, y1, x2, y2) {
+    let lols = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+    return lols;
+}
 
