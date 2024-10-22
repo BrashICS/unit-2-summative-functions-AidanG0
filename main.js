@@ -45,23 +45,24 @@ function vertex() {
 
 
 // 1
-function difference(a, b) {
-    let diff = delta(a, b);
-    return diff
+function find_difference(a, b) {
+    let diff = Math.abs(a - b);
+    return diff;
 }
 
 // 2
-function slope(x1, y1, x2, y2) {
-    let slp = delta(x1, x2)/delta(y1, y2);
-    document.getElementById("slope_answer").textContent = slp
+function find_slope(x1, y1, x2, y2) {
+    let slp = (y2 - y1) / (x2 - x1);
+    return slp;
 }
 
 // 3
-function average(n1, n2) {
-    let avg = (n1+n2)/(document.getElementById("average_between").value);
+
+function find_average(n1, n2) {
+    let avg = (n1+n2)/;
     return avg;
-}
+
 
 // 4
-function
+
 
