@@ -44,7 +44,9 @@ function vertex() {
 // 1
 function find_difference(a, b) {
     let diff = Math.abs(a - b);
+    document.getElementById("").textContent = roll
     return diff;
+    
 }
 
 // 2
@@ -55,11 +57,14 @@ function find_slope(x1, y1, x2, y2) {
 
 // 3
 
-function find_average(n1, n2) {
-    let avg = (n1 + n2)/2;
-    return avg;
-}
-
+function find_average(...theArgs) {
+    let average = 0;
+    for (const arg of theArgs) {
+      average += arg;
+    }
+    average = average/theArgs.length
+    return average;
+  }
 
 // 4 rounding box in html
 
