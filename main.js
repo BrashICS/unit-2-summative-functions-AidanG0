@@ -56,25 +56,13 @@ function find_difference() {
 // Calc
     const diff = Math.abs(a1 - b1);
     document.getElementById("difference_answer").textContent = diff
-    return diff;
+    let Difference = diff
+    return {Difference};
     }
 
 
 // 2
-function find_slope() {
-    const input = document.getElementById("coordinates").value;
-        const regex = /\(([^,]+),([^,]+)\) \(([^,]+),([^,]+)\)/;
-        const match = input.match(regex);
-        if (match) {
-            const x1 = parseFloat(match[1]);
-            const y1 = parseFloat(match[2]);
-            const x2 = parseFloat(match[3]);
-            const y2 = parseFloat(match[4]);
-            const slp = (y2 - y1) / (x2 - x1);
-            document.getElementById("slope_answer").textContent = slp;
-            return slp;
-        }
-}
+
 
 // 3
 function find_average() {
@@ -86,7 +74,8 @@ function find_average() {
     }
     avg = avg/theArgs.length
     document.getElementById("average_answer").textContent = avg
-    return avg;
+    let Average = avg
+    return {Average};
 }
 // 4 rounding box in html
 function find_rounded() {
