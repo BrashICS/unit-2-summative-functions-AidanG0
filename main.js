@@ -14,6 +14,7 @@ document.getElementById("average").addEventListener("click", find_average);
 document.getElementById("round").addEventListener("click", find_rounded);
 document.getElementById("slope_length_of_line_segment").addEventListener("click", find_line_segment);
 document.getElementById("rec_prism_vol_sur").addEventListener("click", find_rectangular_prysm);
+document.getElementById("cylinder_v_sa").addEventListener("click", find_cylinder);
 document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
 document.getElementById("zeros_vertex").addEventListener("click", find_parabola);
 
@@ -133,6 +134,22 @@ function find_rectangular_prysm() {
     let SurfaceArea = sur
     return {Volume, SurfaceArea};
     }
+
+
+    function find_cylinder() {
+        const input = document.getElementById("dimensions_cyl").value;
+        const numbers = input.split(', ').map(Number);
+                const h = numbers[0];
+                const r = numbers[1];
+    // Calc
+        const vol = Math.PI*((r)**2)*h;
+        const sur = 2(Math.PI*((r)**3) + vol)/r;
+        document.getElementById("volume_answer_cyl").textContent = vol
+        document.getElementById("surface_answer_cyl").textContent = sur
+        let Volume = vol
+        let SurfaceArea = sur
+        return {Volume, SurfaceArea};
+        }
 
     function find_sphere() {
         let r = document.getElementById("sph_dimensions").value;
