@@ -58,14 +58,18 @@ function find_difference() {
 
 // 2
 function find_slope() {
-    let x1 = Number(document.getElementById("1x").value);
-    let y1 = Number(document.getElementById("1y").value);
-    let x2 = Number(document.getElementById("2x").value);
-    let y2 = Number(document.getElementById("2y").value);
-// Calc
-    let slp = (y2 - y1) / (x2 - x1);
-    document.getElementById("slope_answer").textContent = slp
-    return slp;
+    const input = document.getElementById("coordinates").value;
+        const regex = /\(([^,]+),([^,]+)\) \(([^,]+),([^,]+)\)/;
+        const match = input.match(regex);
+        if (match) {
+            const x1 = parseFloat(match[1]);
+            const y1 = parseFloat(match[2]);
+            const x2 = parseFloat(match[3]);
+            const y2 = parseFloat(match[4]);
+            const slp = (y2 - y1) / (x2 - x1);
+            document.getElementById("slope_answer").textContent = slp;
+            return slp;
+        }
 }
 
 // 3
