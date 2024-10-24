@@ -69,16 +69,17 @@ function find_slope() {
 }
 
 // 3
-
-function find_average(...theArgs) {
-    let average = 0;
+function find_average() {
+    const arg = document.getElementById('numbers_for_average').value;
+    const theArgs = arg.split(', ').map(num => parseFloat(num.trim()));
+    let avg = 0;
     for (const arg of theArgs) {
-      average += arg;
+      avg += arg;
     }
-    average = average/theArgs.length
-    return average;
-  }
-
+    avg = avg/theArgs.length
+    document.getElementById("average_answer").textContent = avg
+    return avg;
+}
 // 4 rounding box in html
 
 function round(value, decimals) {
