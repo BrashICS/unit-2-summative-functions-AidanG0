@@ -119,22 +119,22 @@ function find_length_of_line_segment() {
 
 // 6
 function find_r_p_volume_sur() {
-    const input = document.getElementById("dimentions").value;
+    const input = document.getElementById("dimensions").value;
     const numbers = input.split(', ').map(Number);
             const l = numbers[0];
             const w = numbers[1];
             const h = numbers[2];
-            const r = numbers[3];
 // Calc
     const vol = w*h*l;
     const sur = ((2*h)*l)+(2*(vol/l))+(2*(vol/h));
     document.getElementById("volume_answer").textContent = vol
     document.getElementById("surface_answer").textContent = sur
-    return vol, sur;
+    
+    return { vol, sur };
     }
 
     function find_sphere_volume_sur() {
-        let r = document.getElementById("sph_dimentions").value;
+        let r = document.getElementById("sph_dimensions").value;
     // Calc
         const vol = (4/3)*Math.PI*r**3;
         const sur = 4*Math.PI*r**2;
