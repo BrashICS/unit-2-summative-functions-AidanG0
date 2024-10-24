@@ -15,8 +15,8 @@ document.getElementById("round").addEventListener("click", find_rounded);
 document.getElementById("slope_length_of_line_segment").addEventListener("click", find_line_segment);
 document.getElementById("rec_prism_vol_sur").addEventListener("click", find_rectangular_prysm);
 document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
-document.getElementById("zeros").addEventListener("click", zeros);
-document.getElementById("vertex").addEventListener("click", vertex);
+document.getElementById("zeros_vertex").addEventListener("click", find_parabola);
+
 
 
 
@@ -145,3 +145,23 @@ function find_rectangular_prysm() {
         let SurfaceArea = sur
         return {Volume, SurfaceArea};
         }
+
+
+function find_parabola() {
+    const input = document.getElementById("dimensions").value;
+    const numbers = input.split(', ').map(Number);
+            const a = numbers[0];
+            const b = numbers[1];
+            const c = numbers[2];
+// Calc
+    const z1 = ((-b) + (Math.sqrt(((b)**2) - ((4*a)*c))))/(2*a);
+    const z2 = ((-b) - (Math.sqrt(((b)**2) - ((4*a)*c))))/(2*a);
+    const x = (z1 + z2)/2;
+    const y = (a*(x)**2) + (b*x) + c
+    let vrt = (x, y)
+    document.getElementById("zeros_answer").textContent = z1, z2
+    document.getElementById("vertex_answer").textContent = vrt
+    let Zeros = (z1, z2)
+    let Vertex = vrt
+    return {Zeros, Vertex};
+    }
