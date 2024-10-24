@@ -10,11 +10,10 @@
 
 /*** Event Listeners ***/
 document.getElementById("difference").addEventListener("click", find_difference);
-document.getElementById("slope").addEventListener("click", find_slope);
 document.getElementById("average").addEventListener("click", find_average);
-document.getElementById("length_of_line_segment").addEventListener("click", find_length_of_line_segment);
-document.getElementById("rec_prism_vol_sur").addEventListener("click", find_r_p_volume_sur);
-document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere_volume_sur);
+document.getElementById("slope_length_of_line_segment").addEventListener("click", find_line_segment);
+document.getElementById("rec_prism_vol_sur").addEventListener("click", find_rectangular_prysm);
+document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
@@ -100,7 +99,7 @@ function round_user(value) {
 
 // 5
 
-function find_length_of_line_segment() {
+function find_line_segment() {
     const input = document.getElementById("lols_coordinates").value;
         const regex = /\(([^,]+),([^,]+)\) \(([^,]+),([^,]+)\)/;
         const match = input.match(regex);
@@ -109,18 +108,21 @@ function find_length_of_line_segment() {
             const y1 = parseFloat(match[2]);
             const x2 = parseFloat(match[3]);
             const y2 = parseFloat(match[4]);
+            const slp = (y2 - y1) / (x2 - x1);
             const lols = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
-            const mid = lols/2
+            const mid = lols/2;
             document.getElementById("length_of_line_segment_answer").textContent = lols
             document.getElementById("mid_of_line_segment_answer").textContent = mid
+            document.getElementById("slope_answer").textContent = slp
+            let Slope = slp
             let LengthOfLineSegment = lols
             let Midpoint = mid
-            return {LengthOfLineSegment, Midpoint};
+            return {Slope, LengthOfLineSegment, Midpoint};
 }
 }
 
 // 6
-function find_r_p_volume_sur() {
+function find_rectangular_prysm() {
     const input = document.getElementById("dimensions").value;
     const numbers = input.split(', ').map(Number);
             const l = numbers[0];
@@ -136,7 +138,7 @@ function find_r_p_volume_sur() {
     return {Volume, SurfaceArea};
     }
 
-    function find_sphere_volume_sur() {
+    function find_sphere() {
         let r = document.getElementById("sph_dimensions").value;
     // Calc
         const vol = (4/3)*Math.PI*r**3;
