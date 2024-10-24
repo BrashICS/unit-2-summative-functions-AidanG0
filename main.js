@@ -13,7 +13,8 @@ document.getElementById("difference").addEventListener("click", find_difference)
 document.getElementById("slope").addEventListener("click", find_slope);
 document.getElementById("average").addEventListener("click", find_average);
 document.getElementById("length_of_line_segment").addEventListener("click", find_length_of_line_segment);
-document.getElementById("rec_prism_vol_sur").addEventListener("click", find_r_p_volume);
+document.getElementById("rec_prism_vol_sur").addEventListener("click", find_r_p_volume_sur);
+document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere_volume_sur);
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
@@ -109,13 +110,15 @@ function find_length_of_line_segment() {
             const x2 = parseFloat(match[3]);
             const y2 = parseFloat(match[4]);
             const lols = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+            const mid = lols/2
             document.getElementById("length_of_line_segment_answer").textContent = lols
-            return lols;
+            document.getElementById("mid_of_line_segment_answer").textContent = mid
+            return lols, mid;
 }
 }
 
 // 6
-function find_r_p_volume() {
+function find_r_p_volume_sur() {
     const input = document.getElementById("dimentions").value;
     const numbers = input.split(', ').map(Number);
             const l = numbers[0];
@@ -129,3 +132,13 @@ function find_r_p_volume() {
     document.getElementById("surface_answer").textContent = sur
     return vol, sur;
     }
+
+    function find_sphere_volume_sur() {
+        let r = document.getElementById("sph_dimentions").value;
+    // Calc
+        const vol = (4/3)*Math.PI*r**3;
+        const sur = 4*Math.PI*r**2;
+        document.getElementById("sph_volume_answer").textContent = vol
+        document.getElementById("sph_surface_answer").textContent = sur
+        return vol, sur;
+        }
