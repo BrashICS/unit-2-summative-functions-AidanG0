@@ -10,6 +10,9 @@
 
 /*** Event Listeners ***/
 document.getElementById("difference").addEventListener("click", find_difference);
+document.getElementById("slope").addEventListener("click", find_slope);
+document.getElementById("average").addEventListener("click", find_average);
+document.getElementById("length_of_line_segment").addEventListener("click", find_length_of_line_segment);
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
@@ -42,16 +45,26 @@ function vertex() {
 
 
 // 1
-function find_difference(a1, b) {
-    let diff = Math.abs(a1 - b);
+
+function find_difference() {
+    let a1 = Number(document.getElementById("a").value);
+    let b1 = Number(document.getElementById("b").value);
+// Calc
+    let diff = Math.abs(a1 - b1);
     document.getElementById("difference_answer").textContent = diff
     return diff;
     
 }
 
 // 2
-function find_slope(x1, y1, x2, y2) {
+function find_slope() {
+    let x1 = Number(document.getElementById("1x").value);
+    let y1 = Number(document.getElementById("1y").value);
+    let x2 = Number(document.getElementById("2x").value);
+    let y2 = Number(document.getElementById("2y").value);
+// Calc
     let slp = (y2 - y1) / (x2 - x1);
+    document.getElementById("slope_answer").textContent = slp
     return slp;
 }
 
