@@ -113,7 +113,9 @@ function find_length_of_line_segment() {
             const mid = lols/2
             document.getElementById("length_of_line_segment_answer").textContent = lols
             document.getElementById("mid_of_line_segment_answer").textContent = mid
-            return lols, mid;
+            let LengthOfLineSegment = lols
+            let Midpoint = mid
+            return {LengthOfLineSegment, Midpoint};
 }
 }
 
@@ -129,8 +131,9 @@ function find_r_p_volume_sur() {
     const sur = ((2*h)*l)+(2*(vol/l))+(2*(vol/h));
     document.getElementById("volume_answer").textContent = vol
     document.getElementById("surface_answer").textContent = sur
-    
-    return { vol, sur };
+    let Volume = vol
+    let SurfaceArea = sur
+    return {Volume, SurfaceArea};
     }
 
     function find_sphere_volume_sur() {
@@ -140,5 +143,7 @@ function find_r_p_volume_sur() {
         const sur = 4*Math.PI*r**2;
         document.getElementById("sph_volume_answer").textContent = vol
         document.getElementById("sph_surface_answer").textContent = sur
-        return vol, sur;
+        let Volume = vol
+        let SurfaceArea = sur
+        return {Volume, SurfaceArea};
         }
