@@ -47,14 +47,16 @@ function vertex() {
 // 1
 
 function find_difference() {
-    let a1 = Number(document.getElementById("a").value);
-    let b1 = Number(document.getElementById("b").value);
+    const input = document.getElementById("numbers_for_difference").value;
+    const numbers = input.split(', ').map(Number);
+            const a1 = numbers[0];
+            const b1 = numbers[1];
 // Calc
-    let diff = Math.abs(a1 - b1);
+    const diff = Math.abs(a1 - b1);
     document.getElementById("difference_answer").textContent = diff
     return diff;
-    
-}
+    }
+
 
 // 2
 function find_slope() {
