@@ -96,8 +96,17 @@ function round_user(value) {
 
 // 5
 
-function find_length_of_line_segment(x1, y1, x2, y2) {
-    let lols = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
-    return lols;
+function find_length_of_line_segment() {
+    const input = document.getElementById("lols_coordinates").value;
+        const regex = /\(([^,]+),([^,]+)\) \(([^,]+),([^,]+)\)/;
+        const match = input.match(regex);
+        if (match) {
+            const x1 = parseFloat(match[1]);
+            const y1 = parseFloat(match[2]);
+            const x2 = parseFloat(match[3]);
+            const y2 = parseFloat(match[4]);
+            const lols = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+            document.getElementById("length_of_line_segment_answer").textContent = lols
+            return lols;
 }
-
+}
