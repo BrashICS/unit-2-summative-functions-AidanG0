@@ -148,7 +148,7 @@ function find_rectangular_prysm() {
 
 
 function find_parabola() {
-    const input = document.getElementById("dimensions").value;
+    const input = document.getElementById("abc").value;
     const numbers = input.split(', ').map(Number);
             const a = numbers[0];
             const b = numbers[1];
@@ -158,10 +158,11 @@ function find_parabola() {
     const z2 = ((-b) - (Math.sqrt(((b)**2) - ((4*a)*c))))/(2*a);
     const x = (z1 + z2)/2;
     const y = (a*(x)**2) + (b*x) + c
-    let vrt = (x, y)
-    document.getElementById("zeros_answer").textContent = z1, z2
+    let zro = `(${z1}, ${z2})`;
+    let vrt = `(${x}, ${y})`;
+    document.getElementById("zeros_answer").textContent = zro
     document.getElementById("vertex_answer").textContent = vrt
-    let Zeros = (z1, z2)
+    let Zeros = zro
     let Vertex = vrt
     return {Zeros, Vertex};
     }
