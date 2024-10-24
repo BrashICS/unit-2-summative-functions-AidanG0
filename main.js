@@ -11,6 +11,7 @@
 /*** Event Listeners ***/
 document.getElementById("difference").addEventListener("click", find_difference);
 document.getElementById("average").addEventListener("click", find_average);
+document.getElementById("round").addEventListener("click", find_rounded);
 document.getElementById("slope_length_of_line_segment").addEventListener("click", find_line_segment);
 document.getElementById("rec_prism_vol_sur").addEventListener("click", find_rectangular_prysm);
 document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
@@ -88,14 +89,20 @@ function find_average() {
     return avg;
 }
 // 4 rounding box in html
+function find_rounded() {
+    const input = document.getElementById("numbers_for_rounding").value;
+    const numbers = input.split(', ').map(Number);
+            const value = numbers[0];
+            const decimals = numbers[1];
+// Calc
+    const rounded = Math.round(value * 10**decimals) / 10**decimals;
+    document.getElementById("rounded_answer").textContent = rounded
+    let RoundedTo = rounded
+    return {RoundedTo};
+    }
 
-function round(value, decimals) {
-    return Math.round(value * 10**decimals) / 10**decimals;
-}
 
-function round_user(value) {
-    let d = Number(document.getElementById("rounding").value)
-}
+
 
 // 5
 

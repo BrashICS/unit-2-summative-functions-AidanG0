@@ -16,30 +16,23 @@
             <img class="heading_img" src="./images/geometry.png" width="32px">
         </h1>
 
-        <h3>Use the tools below to help with your math!</h3>
+        <h2>Use the tools below to help with your math!</h2>
         
-        <p>
-            Round answers to the nearest
-            <input type="number" id="rounding" value="4" placeholder="0" min="0" max="10"  class="short_number">
-            decimals.
-        </p>
-
-        <hr>
         
         <!-- Geometry -->
         <div>
-            <h4>Part 1 - Geometry</h4>
+            <h3>Part 1 - Geometry</h3>
 
 <!-- difference -->
-<h5>Find the difference</h5>
+<h4>Find the difference</h4>
 
-<label for="numbers_for_difference">Enter 2 Numbers:</label>
+<h5><label for="numbers_for_difference">Enter 2 Numbers:</label></h5>
 <input id="numbers_for_difference" type="text" placeholder="1, 2"> &nbsp;
 <button id="difference">Find the difference</button>
 
 <div>The difference is: <span id="difference_answer"></span></div>
 
-<!-- slope -->
+
 
 
 
@@ -48,18 +41,27 @@
         
 <!-- average -->
 
-<h5>Find the average</h5>
-<label for="numbers_for_average">Enter Any Amount Of Numbers:</label>
+<h4>Find the average</h4>
+<h5><label for="numbers_for_average">Enter Any Amount Of Numbers:</label></h5>
 <input id="numbers_for_average" type="text" placeholder="1, 2, 3, 4, etc..."> &nbsp;
 
 <button id="average">Find the average</button>
 
 <div>The average is: <span id="average_answer"></span></div>
 
+
+<!-- round -->
+<h4>Round it</h4>
+
+<h5><label for="numbers_for_rounding">Enter Number and Amound of Decimals:</label></h5>
+<input id="numbers_for_rounding" type="text" placeholder="1.12345etc, 4"> &nbsp;
+<button id="round">Round</button>
+
+<div>Rounded: <span id="rounded_answer"></span></div>
 <!-- length of line segment -->
 
-<h5>Find slope, length, and midpoint of line segment</h5>
-<label for="lols_coordinates">Enter Coordinates:</label>
+<h4>Find slope, length, and midpoint of line segment</h4>
+<h5><label for="lols_coordinates">Enter Coordinates:</label></h5>
 <input type="text" id="lols_coordinates" placeholder="(x1, y1) (x2, y2)"> &nbsp;
 
 <button id="slope_length_of_line_segment">Find slope, length, and midpoint</button>
@@ -68,9 +70,9 @@
 <div>The midpoint of the line segment is: <span id="mid_of_line_segment_answer"></span></div>
 
 <!-- rectangular prism -->
-<h5>Find the volume and surface area of rectangular prism</h5>
+<h4>Find the volume and surface area of rectangular prism</h4>
 
-<label for="dimensions">Enter Dimensions:</label>
+<h5><label for="dimensions">Enter Dimensions:</label></h5>
 <input id="dimensions" type="text" placeholder="Length, Width, Height"> &nbsp;
 <button id="rec_prism_vol_sur">Find the volume and surface area</button>
 
@@ -79,9 +81,9 @@
 
 <!-- sphere -->
 
-<h5>Find the volume and surface area of sphere</h5>
+<h4>Find the volume and surface area of sphere</h4>
 
-<label for="sph_dimensions">Enter Dimensions:</label>
+<h5><label for="sph_dimensions">Enter Dimensions:</label></h5>
 <input id="sph_dimensions" type="number" placeholder="Radius"> &nbsp;
 <button id="sphere_vol_sur">Find the volume and surface area</button>
 
