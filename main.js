@@ -13,6 +13,7 @@ document.getElementById("difference").addEventListener("click", find_difference)
 document.getElementById("slope").addEventListener("click", find_slope);
 document.getElementById("average").addEventListener("click", find_average);
 document.getElementById("length_of_line_segment").addEventListener("click", find_length_of_line_segment);
+document.getElementById("rec_prism_vol_sur").addEventListener("click", find_r_p_volume);
 document.getElementById("zeros").addEventListener("click", zeros);
 document.getElementById("vertex").addEventListener("click", vertex);
 
@@ -112,3 +113,19 @@ function find_length_of_line_segment() {
             return lols;
 }
 }
+
+// 6
+function find_r_p_volume() {
+    const input = document.getElementById("dimentions").value;
+    const numbers = input.split(', ').map(Number);
+            const l = numbers[0];
+            const w = numbers[1];
+            const h = numbers[2];
+            const r = numbers[3];
+// Calc
+    const vol = w*h*l;
+    const sur = ((2*h)*l)+(2*(vol/l))+(2*(vol/h));
+    document.getElementById("volume_answer").textContent = vol
+    document.getElementById("surface_answer").textContent = sur
+    return vol, sur;
+    }
