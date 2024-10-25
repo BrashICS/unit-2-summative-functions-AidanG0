@@ -18,6 +18,7 @@ document.getElementById("cylinder_v_sa").addEventListener("click", find_cylinder
 document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
 document.getElementById("zeros_vertex").addEventListener("click", find_parabola);
 document.getElementById("round_ver").addEventListener("click", find_rounded_vertex_zero);
+document.getElementById("round_sph").addEventListener("click", find_rounded_sphere);
 
 // BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
@@ -139,6 +140,20 @@ function find_rectangular_prysm() {
         document.getElementById("sph_surface_answer").textContent = sur
         let Volume = vol
         let SurfaceArea = sur
+        return {Volume, SurfaceArea};
+        }
+
+        function find_rounded_sphere() {
+        let decimals_r_sph = document.getElementById("numbers_for_rounding_sph").value;
+        let r_r = document.getElementById("sph_dimensions").value;
+        const vol_r = (4/3)*Math.PI*r_r**3;
+        const sur_r = 4*Math.PI*r_r**2;
+        const rounded_vol_r = Math.round(vol_r * 10**decimals_r_sph)/ 10**decimals_r_sph
+        const rounded_sur_r = Math.round(sur_r * 10**decimals_r_sph) / 10**decimals_r_sph;
+        document.getElementById("sph_volume_answer").textContent = rounded_vol_r
+        document.getElementById("sph_surface_answer").textContent = rounded_sur_r
+        let Volume = rounded_vol_r
+        let SurfaceArea = rounded_sur_r
         return {Volume, SurfaceArea};
         }
 
