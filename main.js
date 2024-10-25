@@ -18,32 +18,10 @@ document.getElementById("cylinder_v_sa").addEventListener("click", find_cylinder
 document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
 document.getElementById("zeros_vertex").addEventListener("click", find_parabola);
 
+// BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 
 
-/*** Functions ***/
-
-// Round to the nearest `decimals` number of decimals
-
-
-// Round to the user's number of decimals
-
-
-
-
-// Calculate the y-value of a parabola from standand form
-function y_quad(a, b, c, x) {
-
-}
-
-// Determine the zeros of a quadratic using user-inputs for a, b, and c
-function zeros() {
-}
-
-// Determine the vertex of a quadratic using user-inputs for a, b, and c
-function vertex() {
-
-}
 
 
 
