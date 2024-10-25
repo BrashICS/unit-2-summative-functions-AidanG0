@@ -17,6 +17,7 @@ document.getElementById("rec_prism_vol_sur").addEventListener("click", find_rect
 document.getElementById("cylinder_v_sa").addEventListener("click", find_cylinder);
 document.getElementById("sphere_vol_sur").addEventListener("click", find_sphere);
 document.getElementById("zeros_vertex").addEventListener("click", find_parabola);
+document.getElementById("round_ver").addEventListener("click", find_rounded_vertex_zero);
 
 // BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
@@ -159,5 +160,31 @@ function find_parabola() {
     document.getElementById("vertex_answer").textContent = vrt
     let Zeros = zro
     let Vertex = vrt
+    return {Zeros, Vertex};
+}
+
+
+    
+    function find_rounded_vertex_zero() {
+        const input = document.getElementById("abc").value;
+        const numbers = input.split(', ').map(Number);
+            const a = numbers[0];
+            const b = numbers[1];
+            const c = numbers[2];
+        let decimals_r = document.getElementById("numbers_for_rounding_ver").value;
+        const value_r1 = ((-b) + (Math.sqrt(((b)**2) - ((4*a)*c))))/(2*a);
+        const value_r2 = ((-b) - (Math.sqrt(((b)**2) - ((4*a)*c))))/(2*a);
+        const x_r = (value_r1 + value_r2)/2;
+        const y_r = (a*(x_r)**2) + (b*x_r) + c
+    const rounded_z1 = Math.round(value_r1 * 10**decimals_r)/ 10**decimals_r
+    const rounded_z2 = Math.round(value_r2 * 10**decimals_r) / 10**decimals_r;
+    const rounded_x1 = Math.round(x_r * 10**decimals_r)/ 10**decimals_r
+    const rounded_y1 = Math.round(y_r * 10**decimals_r) / 10**decimals_r;
+    let zro_r = `(${rounded_z1}, ${rounded_z2})`;
+    let vrt_r = `(${rounded_x1}, ${rounded_y1})`;
+    document.getElementById("zeros_answer").textContent = zro_r
+    document.getElementById("vertex_answer").textContent = vrt_r
+    let Zeros = zro_r
+    let Vertex = vrt_r
     return {Zeros, Vertex};
     }
