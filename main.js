@@ -22,6 +22,7 @@ document.getElementById("round_sph").addEventListener("click", find_rounded_sphe
 document.getElementById("round_cyl").addEventListener("click", find_rounded_cyl);
 document.getElementById("round_rec").addEventListener("click", find_rounded_rec);
 document.getElementById("round_line").addEventListener("click", find_rounded_line);
+document.getElementById("round_average").addEventListener("click", find_rounded_average);
 
 // BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
@@ -61,6 +62,23 @@ function find_average() {
     let Average = avg
     return {Average};
 }
+
+
+function find_rounded_average() {
+    const arg = document.getElementById('numbers_for_average').value;
+    const theArgs = arg.split(', ').map(num => parseFloat(num.trim()));
+    let avg_r = 0;
+    for (const arg of theArgs) {
+      avg_r += arg;
+    }
+    avg_r = avg_r/theArgs.length
+    let decimals_r_average = document.getElementById("numbers_for_rounding_avg").value;
+    const rounded_avg_r = Math.round(avg_r * 10**decimals_r_average)/ 10**decimals_r_average;
+    document.getElementById("average_answer").textContent = rounded_avg_r
+    let RoundedAverage = rounded_avg_r
+    return {RoundedAverage};
+}
+
 // 4 rounding box in html
 function find_rounded() {
     const input = document.getElementById("numbers_for_rounding").value;
