@@ -27,8 +27,26 @@ document.getElementById("round_average").addEventListener("click", find_rounded_
 // BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 
+// I added these overly complicated rounding codes because it now gives you the option to see their
+// actual values with all of the original decimals, then if you want, below that you can set the number of
+// decimals you want and it will then round the answer and if you want to see the original again just press
+// the find button to reset it. So for example if you want sphere to be rounded to 2 decimal places but want 
+// the porabola to be rounded to 4, both can be rounded individually.
 
 
+// Also if you try to go and do these in the console you can, but you have to 
+// set the: "a, b, c" or "x1, y1, x2, y2" etc
+// as: "a=..." etc
+// then once you enter: "find_...()"
+
+// Difference: find_difference()
+// Average: find_average()
+// Round: find_rounded()
+// anything to do with line segment: find_line_segment()
+// Rectangular Prism: find_rectangular_prysm()
+// Cylinder: find_cylinder()
+// Sphere: find_sphere()
+// anythind to do with the vertex: find_parabola()
 
 
 // 1
