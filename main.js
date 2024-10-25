@@ -20,6 +20,8 @@ document.getElementById("zeros_vertex").addEventListener("click", find_parabola)
 document.getElementById("round_ver").addEventListener("click", find_rounded_vertex_zero);
 document.getElementById("round_sph").addEventListener("click", find_rounded_sphere);
 document.getElementById("round_cyl").addEventListener("click", find_rounded_cyl);
+document.getElementById("round_rec").addEventListener("click", find_rounded_rec);
+document.getElementById("round_line").addEventListener("click", find_rounded_line);
 
 // BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
@@ -99,6 +101,33 @@ function find_line_segment() {
 }
 }
 
+function find_rounded_line() {
+    const input = document.getElementById("lols_coordinates").value;
+    const regex = /\(([^,]+),([^,]+)\) \(([^,]+),([^,]+)\)/;
+        const match = input.match(regex);
+        if (match) {
+            const x1 = parseFloat(match[1]);
+            const y1 = parseFloat(match[2]);
+            const x2 = parseFloat(match[3]);
+            const y2 = parseFloat(match[4]);
+
+            const slp_r = (y2 - y1) / (x2 - x1);
+            const lols_r = Math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2));
+            const mid_r = lols_r/2;
+            let decimals_r_line = document.getElementById("numbers_for_rounding_line").value;
+const rounded_slp_r = Math.round(slp_r * 10**decimals_r_line)/ 10**decimals_r_line;
+const rounded_lols_r = Math.round(lols_r * 10**decimals_r_line)/ 10**decimals_r_line;
+const rounded_mid_r = Math.round(mid_r * 10**decimals_r_line) / 10**decimals_r_line;
+document.getElementById("length_of_line_segment_answer").textContent = rounded_lols_r
+document.getElementById("mid_of_line_segment_answer").textContent = rounded_mid_r
+document.getElementById("slope_answer").textContent = rounded_slp_r
+let RoundedSlope = rounded_slp_r
+let RoundedLengthOfLineSegment = rounded_lols_r
+let RoundedMidpoint = rounded_mid_r
+return {RoundedSlope, RoundedLengthOfLineSegment, RoundedMidpoint};
+}
+}
+
 // 6
 function find_rectangular_prysm() {
     const input = document.getElementById("dimensions").value;
@@ -114,6 +143,24 @@ function find_rectangular_prysm() {
     let Volume = vol
     let SurfaceArea = sur
     return {Volume, SurfaceArea};
+    }
+
+    function find_rounded_rec() {
+        const input = document.getElementById("dimensions").value;
+        const numbers = input.split(', ').map(Number);
+        const l = numbers[0];
+        const w = numbers[1];
+        const h = numbers[2];
+        let decimals_r_rec = document.getElementById("numbers_for_rounding_rec").value;
+        const volrec = w*h*l;
+        const surrec = ((2*h)*l)+(2*(volrec/l))+(2*(volrec/h));
+    const rounded_vol_rec = Math.round(volrec * 10**decimals_r_rec)/ 10**decimals_r_rec
+    const rounded_sur_rec = Math.round(surrec * 10**decimals_r_rec) / 10**decimals_r_rec;
+    document.getElementById("volume_answer").textContent = rounded_vol_rec
+    document.getElementById("surface_answer").textContent = rounded_sur_rec
+    let RoundedVolume = rounded_vol_rec
+    let RoundedSurfaceArea = rounded_sur_rec
+    return {RoundedVolume, RoundedSurfaceArea};
     }
 
 
@@ -144,9 +191,9 @@ function find_rectangular_prysm() {
     const rounded_sur_cyl = Math.round(value_r2 * 10**decimals_r_cyl) / 10**decimals_r_cyl;
     document.getElementById("volume_answer_cyl").textContent = rounded_vol_cyl
     document.getElementById("surface_answer_cyl").textContent = rounded_sur_cyl
-    let Volume = rounded_vol_cyl
-    let SurfaceArea = rounded_sur_cyl
-    return {Volume, SurfaceArea};
+    let RoundedVolume = rounded_vol_cyl
+    let RoundedSurfaceArea = rounded_sur_cyl
+    return {RoundedVolume, RoundedSurfaceArea};
     }
     function find_sphere() {
         let r = document.getElementById("sph_dimensions").value;
@@ -169,9 +216,9 @@ function find_rectangular_prysm() {
         const rounded_sur_sph = Math.round(sur_r * 10**decimals_r_sph) / 10**decimals_r_sph;
         document.getElementById("sph_volume_answer").textContent = rounded_vol_sph
         document.getElementById("sph_surface_answer").textContent = rounded_sur_sph
-        let Volume = rounded_vol_sph
-        let SurfaceArea = rounded_sur_sph
-        return {Volume, SurfaceArea};
+        let RoundedVolume = rounded_vol_sph
+        let RoundedSurfaceArea = rounded_sur_sph
+        return {RoundedVolume, RoundedSurfaceArea};
         }
 
 
@@ -216,7 +263,7 @@ function find_parabola() {
     let vrt_r = `(${rounded_x1}, ${rounded_y1})`;
     document.getElementById("zeros_answer").textContent = zro_r
     document.getElementById("vertex_answer").textContent = vrt_r
-    let Zeros = zro_r
-    let Vertex = vrt_r
-    return {Zeros, Vertex};
+    let RoundedZeros = zro_r
+    let RoundedVertex = vrt_r
+    return {RoundedZeros, RoundedVertex};
     }
