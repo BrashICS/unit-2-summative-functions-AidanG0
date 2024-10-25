@@ -23,6 +23,7 @@ document.getElementById("round_cyl").addEventListener("click", find_rounded_cyl)
 document.getElementById("round_rec").addEventListener("click", find_rounded_rec);
 document.getElementById("round_line").addEventListener("click", find_rounded_line);
 document.getElementById("round_average").addEventListener("click", find_rounded_average);
+document.getElementById("round_diff").addEventListener("click", find_rounded_diff);
 
 // BTW I used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
@@ -63,7 +64,18 @@ function find_difference() {
     return {Difference};
     }
 
-
+    function find_rounded_diff() {
+        const input = document.getElementById("numbers_for_difference").value;
+        const numbers = input.split(', ').map(Number);
+        const a1 = numbers[0];
+        const b1 = numbers[1];
+        let decimals_r_diff = document.getElementById("numbers_for_rounding_diff").value;
+        const diff_r = Math.abs(a1 - b1);
+    const rounded_diff = Math.round(diff_r * 10**decimals_r_diff)/ 10**decimals_r_diff;
+    document.getElementById("difference_answer").textContent = rounded_diff
+    let RoundedDifference = rounded_diff
+    return {RoundedDifference};
+    }
 // 2
 
 
